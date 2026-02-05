@@ -11,19 +11,21 @@ import {
 import { WaitlistForm } from "@/components/waitlist-form"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
-  Mail,
-  Bell,
-  FileCheck,
-  Clock,
-  Shield,
-  Zap,
-  Users,
-  Check,
-  ArrowRight,
-  FileText,
-  Calendar,
-  MessageSquare,
-} from "lucide-react"
+  IconMail,
+  IconBell,
+  IconFileCheck,
+  IconClock,
+  IconShield,
+  IconBolt,
+  IconUsers,
+  IconCheck,
+  IconArrowRight,
+  IconFileText,
+  IconCalendar,
+  IconMessage,
+  IconLink,
+  IconRocket,
+} from "@tabler/icons-react"
 import Link from "next/link"
 
 export default function Home() {
@@ -33,19 +35,22 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <FileText className="h-8 w-8 text-primary" />
+            <IconFileText className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold">DocuCollect</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block">
+            <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block transition-colors">
               Pricing
             </Link>
-            <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block">
+            <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block transition-colors">
               FAQ
             </Link>
             <ThemeToggle />
             <Link href="#waitlist">
-              <Button>Join Waitlist</Button>
+              <Button className="gap-2">
+                Join Waitlist
+                <IconArrowRight className="h-4 w-4" />
+              </Button>
             </Link>
           </div>
         </div>
@@ -54,8 +59,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-4">
-            🚀 Launching Soon - Get Early Access
+          <Badge variant="secondary" className="mb-4 gap-1.5">
+            <IconRocket className="h-3.5 w-3.5" />
+            Launching Soon - Get Early Access
           </Badge>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
             Stop Chasing Clients for{" "}
@@ -67,12 +73,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="#waitlist">
-              <Button size="lg" className="h-14 px-8 text-lg">
+              <Button size="lg" className="h-14 px-8 text-lg gap-2">
                 Get Early Access
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <IconArrowRight className="h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground flex items-center gap-1.5">
+              <IconUsers className="h-4 w-4" />
               Join 500+ accountants on the waitlist
             </p>
           </div>
@@ -91,7 +98,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-destructive/50 bg-destructive/5">
               <CardHeader>
-                <Mail className="h-10 w-10 text-destructive mb-2" />
+                <IconMail className="h-10 w-10 text-destructive mb-2" />
                 <CardTitle className="text-destructive">Email Chaos</CardTitle>
               </CardHeader>
               <CardContent>
@@ -102,7 +109,7 @@ export default function Home() {
             </Card>
             <Card className="border-destructive/50 bg-destructive/5">
               <CardHeader>
-                <Clock className="h-10 w-10 text-destructive mb-2" />
+                <IconClock className="h-10 w-10 text-destructive mb-2" />
                 <CardTitle className="text-destructive">5-10 Hours/Week</CardTitle>
               </CardHeader>
               <CardContent>
@@ -113,7 +120,7 @@ export default function Home() {
             </Card>
             <Card className="border-destructive/50 bg-destructive/5">
               <CardHeader>
-                <MessageSquare className="h-10 w-10 text-destructive mb-2" />
+                <IconMessage className="h-10 w-10 text-destructive mb-2" />
                 <CardTitle className="text-destructive">Endless Follow-ups</CardTitle>
               </CardHeader>
               <CardContent>
@@ -189,7 +196,7 @@ export default function Home() {
             <Card className="p-6 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
               <div className="aspect-video bg-background rounded-lg shadow-lg flex items-center justify-center">
                 <div className="text-center p-8">
-                  <FileCheck className="h-16 w-16 text-primary mx-auto mb-4" />
+                  <IconFileCheck className="h-16 w-16 text-primary mx-auto mb-4" />
                   <p className="text-lg font-semibold">
                     Client Portal Preview
                   </p>
@@ -213,9 +220,9 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <Bell className="h-8 w-8 text-primary mb-2" />
+                <IconBell className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Smart Auto-Reminders</CardTitle>
               </CardHeader>
               <CardContent>
@@ -224,9 +231,9 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <FileText className="h-8 w-8 text-primary mb-2" />
+                <IconFileText className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Tax Document Templates</CardTitle>
               </CardHeader>
               <CardContent>
@@ -235,9 +242,9 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <Shield className="h-8 w-8 text-primary mb-2" />
+                <IconShield className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Bank-Level Security</CardTitle>
               </CardHeader>
               <CardContent>
@@ -246,9 +253,9 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <Zap className="h-8 w-8 text-primary mb-2" />
+                <IconLink className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Magic Link Access</CardTitle>
               </CardHeader>
               <CardContent>
@@ -257,9 +264,9 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <Calendar className="h-8 w-8 text-primary mb-2" />
+                <IconCalendar className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Deadline Tracking</CardTitle>
               </CardHeader>
               <CardContent>
@@ -268,9 +275,9 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="transition-all hover:shadow-lg hover:border-primary/20">
               <CardHeader>
-                <Users className="h-8 w-8 text-primary mb-2" />
+                <IconUsers className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="text-lg">Team Dashboard</CardTitle>
               </CardHeader>
               <CardContent>
@@ -293,7 +300,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="relative">
+            <Card className="relative transition-all hover:shadow-lg">
               <CardHeader>
                 <CardTitle>Starter</CardTitle>
                 <CardDescription>Perfect for solo practitioners</CardDescription>
@@ -304,26 +311,18 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Up to 50 clients</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Unlimited document requests</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Auto-reminders</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Tax document templates</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Email support</span>
-                  </li>
+                  {[
+                    "Up to 50 clients",
+                    "Unlimited document requests",
+                    "Auto-reminders",
+                    "Tax document templates",
+                    "Email support",
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <IconCheck className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
                 <Link href="#waitlist" className="block mt-6">
                   <Button className="w-full" variant="outline">
@@ -332,7 +331,7 @@ export default function Home() {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="relative border-primary">
+            <Card className="relative border-primary transition-all hover:shadow-lg">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <Badge>Most Popular</Badge>
               </div>
@@ -346,38 +345,25 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Unlimited clients</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Unlimited document requests</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Auto-reminders</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Tax document templates</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Team members (up to 5)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Custom branding</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Priority support</span>
-                  </li>
+                  {[
+                    "Unlimited clients",
+                    "Unlimited document requests",
+                    "Auto-reminders",
+                    "Tax document templates",
+                    "Team members (up to 5)",
+                    "Custom branding",
+                    "Priority support",
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <IconCheck className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
                 <Link href="#waitlist" className="block mt-6">
-                  <Button className="w-full">
+                  <Button className="w-full gap-2">
                     Join Waitlist
+                    <IconArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               </CardContent>
@@ -420,33 +406,33 @@ export default function Home() {
                   <tr className="border-t bg-muted/50">
                     <td className="p-4">Tax Templates</td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                     <td className="p-4 text-center text-muted-foreground">Generic only</td>
                   </tr>
                   <tr className="border-t">
                     <td className="p-4">Built for Accountants</td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                     <td className="p-4 text-center text-muted-foreground">Marketing focused</td>
                   </tr>
                   <tr className="border-t bg-muted/50">
                     <td className="p-4">No Login Required</td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                   </tr>
                   <tr className="border-t">
                     <td className="p-4">Auto-Reminders</td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                     <td className="p-4 text-center">
-                      <Check className="h-5 w-5 text-primary mx-auto" />
+                      <IconCheck className="h-5 w-5 text-primary mx-auto" />
                     </td>
                   </tr>
                 </tbody>
@@ -517,7 +503,8 @@ export default function Home() {
       {/* Final CTA / Waitlist Section */}
       <section id="waitlist" className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="secondary" className="mb-4 gap-1.5">
+            <IconBolt className="h-3.5 w-3.5" />
             Limited Early Access
           </Badge>
           <h2 className="text-3xl font-bold mb-4">
@@ -537,16 +524,16 @@ export default function Home() {
       <footer className="py-8 px-4 border-t">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <FileText className="h-6 w-6 text-primary" />
+            <IconFileText className="h-6 w-6 text-primary" />
             <span className="font-semibold">DocuCollect</span>
           </div>
           <p className="text-sm text-muted-foreground">
             © 2026 DocuCollect. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm text-muted-foreground">
-            <Link href="#" className="hover:text-foreground">Privacy</Link>
-            <Link href="#" className="hover:text-foreground">Terms</Link>
-            <Link href="#" className="hover:text-foreground">Contact</Link>
+            <Link href="#" className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link href="#" className="hover:text-foreground transition-colors">Contact</Link>
           </div>
         </div>
       </footer>
